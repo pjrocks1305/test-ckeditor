@@ -8,4 +8,10 @@ router.get('/', function(req, res, next) {
     res.send({data : a, status: 'respond with a resource'});
 });
 
+router.get('/:id', function(req, res, next) {
+    res.send({data : 'requested id is ' + req.params.id});
+});
+
+
+
 module.exports = router;
