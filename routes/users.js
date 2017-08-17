@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     res.send({status: 'respond with a resource'});
 });
-
-
+router.get('/myid/:id', function(req, res, next) {
+    res.send({data : 'requested id is ' + req.params.id});
+});
 module.exports = router;
