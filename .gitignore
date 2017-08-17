@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+mtpbackend.iml
+node_modules/
+_mtp_config.js
+npm-debug.log
+coverage/
+server/routes/test-math.jssendgrid.env
