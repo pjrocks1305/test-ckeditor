@@ -32,8 +32,15 @@ router.use(busboy());
 var HOME_URL = 'http://localhost:3000';
 var IMG_FOLDER = 'images/file/test/';
 
+
+
+
 /*** image broser for ckeditor ***/
 router.all('/admin/browse_url', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+
     var data = {};
     var dirname = process.cwd() + '/public/' + IMG_FOLDER;
     fs.readdir(dirname, function(err, filenames) {
@@ -78,6 +85,12 @@ router.all('/admin/browse_url', function (req, res) {
  * For image upload from CKEditor
  */
 router.post('/upload_url', function (req, res) {
+
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+
+
     var fstream;
     var msg = "";
     var CKEcallback = req.query.CKEditorFuncNum;
